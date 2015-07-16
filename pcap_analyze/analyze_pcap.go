@@ -3,7 +3,7 @@ package main
 import (
 	"code.google.com/p/gopacket"
 	"code.google.com/p/gopacket/pcap"
-	"github.com/hreese/TLSHandshakeDecoder"
+	"github.com/certifyTian/TLSHandshakeDecoder"
 	_ "fmt"
 	"github.com/davecgh/go-spew/spew"
 	_ "io"
