@@ -7,8 +7,8 @@ import (
 )
 
 type TLSRecordLayer struct {
-	contentType uint8
-	version     uint16
+	ContentType uint8
+	Version     uint16
 	length      uint16
 	Fragment    []byte
 }
@@ -18,8 +18,8 @@ func DecodeRecord(p *TLSRecordLayer, data []byte) error {
 		return errors.New("Payload too short to be a TLS packet.")
 	}
 
-	p.contentType = uint8(data[0])
-	p.version = uint16(data[1])<<8 | uint16(data[2])
+	p.ContentType = uint8(data[0])
+	p.Version = uint16(data[1])<<8 | uint16(data[2])
 	p.length = uint16(data[3])<<8 | uint16(data[4])
 
 	p.Fragment = make([]byte, p.length)
