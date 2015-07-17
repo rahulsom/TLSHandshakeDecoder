@@ -22,10 +22,6 @@ type TLSClientHello struct {
 	// TODO: add support for extensions
 }
 
-type TLSServerHello struct {
-
-}
-
 func __anti_annoy_me_sdfsdfsdfsdf() {
     spew.Dump(23)
 }
@@ -48,7 +44,7 @@ func TLSDecodeHandshake(p *TLSHandshake, data []byte) error {
 
 func TLSDecodeClientHello(p *TLSClientHello, data []byte) error {
 	if len(data) < 38 {
-		return errors.New("Handshake body too short (<4).")
+		return errors.New("Handshake body too short (<38).")
 	}
 
     var offset uint = 0
